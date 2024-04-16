@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  forceAmt: 65
+  forceAmt: 50
 --- !u!65 &85927982
 BoxCollider:
   m_ObjectHideFlags: 0
