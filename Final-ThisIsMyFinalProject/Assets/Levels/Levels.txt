@@ -1,0 +1,13 @@
+{
+    "lv0":
+    {
+        "ascii": [
+            "BBBBBBBBBBBBG",
+            "I-----------G",
+            "I--M-----M--G",
+            "I-----P-----G",
+            "I-----------G",
+            "IYYYYYYYYYYYY"
+        ]
+    }
+}
