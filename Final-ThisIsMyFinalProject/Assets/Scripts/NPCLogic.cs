@@ -7,22 +7,38 @@ public class NPCLogic : MonoBehaviour
 {
     // Variables
     [SerializeField] private bool isColliding = false;
+    public NPCScriptableObject npcData;
+
+    [SerializeField] private string npcName;
+    [SerializeField] private Sprite npcSprite;
+    
+    // Preventing re-triggering the behave
+    [SerializeField] private bool isInteracted = false;
     
     // Start is called before the first frame update
     void Start()
     {
+        // Pulling data from the scriptable object
+        npcName = npcData.npcName;
+        npcSprite = npcData.NpcSprite;
         
+        // Implementing the data to the NPC
+        gameObject.name = npcName;
+        gameObject.GetComponent<SpriteRenderer>().sprite = npcSprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // If the player interact, do something
+        // If the player is trying to interact, do something
         if (isColliding)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && !isInteracted)
             {
                 Debug.Log("Interacting with the player.");
+                
+                NPCBehave();
+                isInteracted = true;
             }
         }
     }
@@ -45,5 +61,11 @@ public class NPCLogic : MonoBehaviour
 
             isColliding = false;
         }
+    }
+    
+    // NPC Behave
+    public virtual void NPCBehave()
+    {
+        Debug.Log("NPC behaving...");
     }
 }

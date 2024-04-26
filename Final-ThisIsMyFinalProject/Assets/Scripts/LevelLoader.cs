@@ -43,12 +43,14 @@ public class LevelLoader : MonoBehaviour
         {
             Debug.LogError("NO LEVEL DATA FILE EXIST.");
         }
+        
+        LoadLevel();
     }
 
     // Update is called once per frame
     void Update()
     {
-        LoadLevel();
+        
     }
     
     // Call this function to load levels
@@ -84,10 +86,12 @@ public class LevelLoader : MonoBehaviour
                 // For different characters in the array, generate different blocks
                 switch (chara)
                 {
-                    case '-':
+                    case '-': // Empty space
                         break;
-                    case 'P':
+                    case 'P': // Player
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
+                        break;
+                    default:
                         break;
                 }
                 
