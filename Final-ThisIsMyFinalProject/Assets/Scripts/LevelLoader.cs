@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -19,8 +20,33 @@ public class LevelLoader : MonoBehaviour
     private GameObject level;
     
     // Index of the currently loaded level
-    [SerializeField] private int currentLevel = 0;
-    
+    [SerializeField] private int currentLevel = -1;
+
+    public int CurrentLevel
+    {
+        get
+        {
+            return currentLevel;
+        }
+        set
+        {
+            currentLevel++;
+            
+            LoadLevel(currentLevel);
+        }
+    }
+
+    // Singleton
+    public static LevelLoader instanse;
+
+    private void Awake()
+    {
+        if (instanse == null)
+        {
+            instanse = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +70,7 @@ public class LevelLoader : MonoBehaviour
             Debug.LogError("NO LEVEL DATA FILE EXIST.");
         }
         
-        LoadLevel();
+        
     }
 
     // Update is called once per frame
@@ -54,7 +80,7 @@ public class LevelLoader : MonoBehaviour
     }
     
     // Call this function to load levels
-    private void LoadLevel()
+    private void LoadLevel(int levelIndex)
     {
         // Reset the level
         Destroy(level);
@@ -62,7 +88,7 @@ public class LevelLoader : MonoBehaviour
 
         // Reading the file content
         JSONNode allLevelNode = JSONNode.Parse(fileContent);
-        JSONNode levelNode = allLevelNode["lv" + currentLevel + ""];
+        JSONNode levelNode = allLevelNode["lv" + levelIndex + ""];
 
         JSONArray levelArray = levelNode["ascii"].AsArray;
         
@@ -101,7 +127,7 @@ public class LevelLoader : MonoBehaviour
                 {
                     // Parenting the object
                     newObject.transform.parent = level.transform;
-                    Debug.Log(x + ", " + z);
+                    
                     // Assign the position
                     newObject.transform.position = new Vector3(x, 0, z);
                 }
