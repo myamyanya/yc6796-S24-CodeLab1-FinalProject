@@ -87,6 +87,7 @@ public class LevelLoader : MonoBehaviour
                 switch (chara)
                 {
                     case '-': // Empty space
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Tile"));
                         break;
                     case 'P': // Player
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
@@ -100,7 +101,7 @@ public class LevelLoader : MonoBehaviour
                 {
                     // Parenting the object
                     newObject.transform.parent = level.transform;
-                    
+                    Debug.Log(x + ", " + z);
                     // Assign the position
                     newObject.transform.position = new Vector3(x, 0, z);
                 }
