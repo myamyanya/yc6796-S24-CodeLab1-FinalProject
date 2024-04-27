@@ -21,6 +21,10 @@ public class LevelLoader : MonoBehaviour
     
     // Index of the currently loaded level
     [SerializeField] private int currentLevel = -1;
+    
+    // Offsetting 
+    public float offsetX;
+    public float offsetZ;
 
     public int CurrentLevel
     {
@@ -118,6 +122,9 @@ public class LevelLoader : MonoBehaviour
                     case 'P': // Player
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
                         break;
+                    case 'Z': // Zebra
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/zebra"));
+                        break;
                     default:
                         break;
                 }
@@ -129,7 +136,7 @@ public class LevelLoader : MonoBehaviour
                     newObject.transform.parent = level.transform;
                     
                     // Assign the position
-                    newObject.transform.position = new Vector3(x, 0, z);
+                    newObject.transform.position = new Vector3(x + offsetX, 0, -z + offsetZ);
                 }
             }
         }
