@@ -11,6 +11,7 @@ public class NPCLogic : MonoBehaviour
 
     [SerializeField] private string npcName;
     [SerializeField] private Sprite npcSprite;
+    [SerializeField] private string dialogues;
     
     // Preventing re-triggering the behave
     [SerializeField] private bool isInteracted = false;
@@ -25,22 +26,19 @@ public class NPCLogic : MonoBehaviour
         // Implementing the data to the NPC
         gameObject.name = npcName;
         gameObject.GetComponent<SpriteRenderer>().sprite = npcSprite;
+        
+        // Setting up dialogues
+        if (npcData.dialogueNode != null)
+        {
+            dialogues = npcData.dialogueNode;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         // If the player is trying to interact, do something
-        if (isColliding)
-        {
-            if (Input.GetKey(KeyCode.E) && !isInteracted)
-            {
-                Debug.Log("Interacting with the player.");
-                
-                NPCBehave();
-                isInteracted = true;
-            }
-        }
+        NPCBehave();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,6 +64,14 @@ public class NPCLogic : MonoBehaviour
     // NPC Behave
     public virtual void NPCBehave()
     {
-        Debug.Log("NPC behaving...");
+        if (isColliding)
+        {
+            if (Input.GetKey(KeyCode.E) && !isInteracted)
+            {
+                Debug.Log("Interacting with the player.");
+                
+                isInteracted = true;
+            }
+        }
     }
 }

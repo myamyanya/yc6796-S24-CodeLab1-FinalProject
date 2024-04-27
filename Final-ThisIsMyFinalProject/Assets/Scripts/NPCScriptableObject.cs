@@ -21,4 +21,5 @@ public class NPCScriptableObject : ScriptableObject
     public string npcName;
     public Sprite NpcSprite;
     public NPCType npcType;
+    public string dialogueNode;
 }
