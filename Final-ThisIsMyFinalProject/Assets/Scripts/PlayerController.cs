@@ -34,17 +34,6 @@ public class PlayerController : MonoBehaviour
     {
         // WASD controller to move
         Moving();
-        
-        // When changing the direction, flip the sprite
-        if (Input.GetKey(KeyCode.A))
-        {
-            spriteRenderer.flipX = true;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            spriteRenderer.flipX = false;
-        }
     }
 
     private void Moving()
@@ -62,6 +51,17 @@ public class PlayerController : MonoBehaviour
         movement = mouseInput * forceAmt * Time.deltaTime;
         
         // Moving the player's agency
-        rb.MovePosition(transform.position + movement);
+        rb.velocity = movement;
+        
+        // When changing the direction, flip the sprite
+        if (Input.GetKey(KeyCode.A))
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 }
