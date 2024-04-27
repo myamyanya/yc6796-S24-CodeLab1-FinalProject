@@ -14,9 +14,12 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private bool isGameBegined = false;
     
-    // Display canvas
+    // Variables of canvas
     public Canvas displayTutorial;
     public TextMeshProUGUI textTutorial;
+
+    public Canvas displayInGame;
+    public TextMeshProUGUI textInGame;
     
     // Making the GameManager into a singleton
     private void Awake()
@@ -39,6 +42,16 @@ public class GameManager : MonoBehaviour
     {
         // Reset game status
         isGameBegined = false;
+        
+        // Set-up canvas
+        displayTutorial = GameObject.Find("DisplayTutorial").GetComponent<Canvas>();
+        textTutorial = GameObject.Find("TextBegin").GetComponent<TextMeshProUGUI>();
+
+        // Set-up InGame displaying
+        displayInGame = GameObject.Find("DisplayGame").GetComponent<Canvas>();
+        textInGame = GameObject.Find("TextInGame").GetComponent<TextMeshProUGUI>();
+
+        textInGame.text = "";
     }
 
     // Update is called once per frame
@@ -61,6 +74,10 @@ public class GameManager : MonoBehaviour
         {
             // ... and hide the tutorial UI
             displayTutorial.enabled = false;
+            
+            // Display the In-game canvas and text
+            textInGame.text = "WASD: MOVE" + "  ||  " +
+                              "F: INTERACT";
         }
     }
 }
