@@ -19,12 +19,12 @@ public class LevelLoader : MonoBehaviour
     // For parenting and organizing all Instantiated objects
     private GameObject level;
     
-    // Index of the currently loaded level
-    [SerializeField] private int currentLevel = -1;
-    
     // Offsetting 
     public float offsetX;
     public float offsetZ;
+    
+    // Index of the currently loaded level
+    [SerializeField] private int currentLevel = -1;
 
     public int CurrentLevel
     {
@@ -37,6 +37,7 @@ public class LevelLoader : MonoBehaviour
             currentLevel++;
             
             LoadLevel(currentLevel);
+            Debug.Log("CurrentLevel: " + currentLevel);
         }
     }
 
@@ -119,13 +120,26 @@ public class LevelLoader : MonoBehaviour
                     case '-': // Empty space
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Tile"));
                         break;
+                    case 'F': // Flowers
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Flowers"));
+                        break;
+                    case 'G': // Grass
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Grass"));
+                        break;
+                    case 'N': // Next Level trigger
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/NextLevel"));
+                        break;
                     case 'P': // Player
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
+                        break;
+                    case 'Y': // Yellow Flowers
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/YellowFlowers"));
                         break;
                     case 'Z': // Zebra
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/zebra"));
                         break;
                     default:
+                        // newObject = Instantiate(Resources.Load<GameObject>(""));
                         break;
                 }
                 

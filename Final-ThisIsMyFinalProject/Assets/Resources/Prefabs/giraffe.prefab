@@ -42,6 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8832249008933171443}
+  - component: {fileID: 2832242903776941538}
   - component: {fileID: 4431067942573366464}
   - component: {fileID: 5607769752428768193}
   - component: {fileID: 2595576134944279586}
@@ -67,7 +68,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 676664291518199984}
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
---- !u!114 &4431067942573366464
+--- !u!114 &2832242903776941538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,6 +76,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917115475762378870}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df35396ac98495a48a9933faa10810f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcData: {fileID: 0}
+  npcName: 
+  npcSprite: {fileID: 0}
+  dialogues: 
+  isColliding: 0
+  isInteracted: 0
+--- !u!114 &4431067942573366464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917115475762378870}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23760a4c01dc7a347b5f46b2e8efa541, type: 3}
   m_Name: 
@@ -220,7 +239,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 808e6b9b52fbd3c4283db5811b7a40a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

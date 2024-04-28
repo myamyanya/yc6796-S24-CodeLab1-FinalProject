@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     // For changing sprite
     [SerializeField] private SpriteRenderer spriteRenderer;
     
+    // For loading next level
+    [SerializeField] private bool isReadyForNextLevel = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,17 @@ public class PlayerController : MonoBehaviour
     {
         // WASD controller to move
         Moving();
+
+        // Press F to load next level
+        if (isReadyForNextLevel)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("Next-level Loaded");
+
+                LevelLoader.instanse.CurrentLevel++;
+            }
+        }
     }
 
     private void Moving()
@@ -62,6 +76,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             spriteRenderer.flipX = false;
+        }
+    }
+
+    // For checking if the player is colliding with the NEXT LEVEL Trigger
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "NextLevel")
+        {
+            //Debug.Log("Hit NextLevel");
+            isReadyForNextLevel = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "NextLevel")
+        {
+            isReadyForNextLevel = false;
         }
     }
 }
