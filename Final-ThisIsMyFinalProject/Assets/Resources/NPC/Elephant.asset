@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f9f29e5ba224c479e96238b6774d95, type: 3}
   m_Name: Elephant
   m_EditorClassIdentifier: 
-  npcName: Elephant
+  npcName: Giraffic
   NpcSprite: {fileID: 21300000, guid: d6cefca9454df014db02f4f19585ac3a, type: 3}
   npcType: 1
   dialogueNode: Elephant

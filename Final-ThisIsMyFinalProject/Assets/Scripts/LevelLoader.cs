@@ -17,7 +17,7 @@ public class LevelLoader : MonoBehaviour
     private string fileContent;
     
     // For parenting and organizing all Instantiated objects
-    private GameObject level;
+    public GameObject level;
     
     // Offsetting 
     public float offsetX;

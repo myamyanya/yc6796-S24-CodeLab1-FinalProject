@@ -80,10 +80,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2412b88a5df6f4098621976c9b7e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcData: {fileID: 0}
+  npcData: {fileID: 11400000, guid: 7d996048f9e10604186254467400e0fd, type: 2}
   npcName: 
   npcSprite: {fileID: 0}
   dialogues: 
+  dialogueRunner: {fileID: 0}
   isColliding: 0
   isInteracted: 0
 --- !u!114 &4431067942573366464
@@ -102,6 +103,7 @@ MonoBehaviour:
   npcName: 
   npcSprite: {fileID: 0}
   dialogues: 
+  dialogueRunner: {fileID: 0}
   isColliding: 0
   isInteracted: 0
 --- !u!212 &5607769752428768193

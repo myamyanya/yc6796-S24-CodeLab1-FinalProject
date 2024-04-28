@@ -68,6 +68,11 @@ public class NPCLogicRaccoon : NPCLogic
 
             // Checking is the dialogue finished from Yarn
             yarnVarialbes.TryGetValue("$isGameEnd", out isConversationFinished);
+
+            if (isConversationFinished)
+            {
+                GameManager.instance.isGameEnded = true;
+            }
         }
         else
         {

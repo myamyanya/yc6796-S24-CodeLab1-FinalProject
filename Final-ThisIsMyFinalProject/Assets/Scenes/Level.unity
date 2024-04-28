@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea97428d3eaaa3241a74a4e5f7c2e21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 0}
   offsetX: -1
   offsetZ: -1
   currentLevel: -1
@@ -1464,11 +1465,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2979142412729686908, guid: a1980102641655540b04b5941c3e76a9, type: 3}
-      propertyPath: m_text
-      value: Hey, Fox! Raccoon Trashpanda speaking...! \n I've made some yummy apple
-        pie this morning :D \n Would love for you to drop by and hang out with me?
-      objectReference: {fileID: 0}
+    - target: {fileID: 3062452572482091373, guid: a1980102641655540b04b5941c3e76a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 24253c4ee7ed7cd44803ad27b698002d, type: 3}
     - target: {fileID: 3063967770337298538, guid: a1980102641655540b04b5941c3e76a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1512,6 +1512,22 @@ PrefabInstance:
     - target: {fileID: 3961984999551664218, guid: a1980102641655540b04b5941c3e76a9, type: 3}
       propertyPath: m_Name
       value: GameManagerHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013222531323422726, guid: a1980102641655540b04b5941c3e76a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013222531323422726, guid: a1980102641655540b04b5941c3e76a9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013222531323422726, guid: a1980102641655540b04b5941c3e76a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013222531323422726, guid: a1980102641655540b04b5941c3e76a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

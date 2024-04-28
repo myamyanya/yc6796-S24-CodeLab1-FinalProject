@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     // Variables 
     public static GameManager instance;
     
+    // Game status
     public bool isGameBegined = false;
+    public bool isGameEnded = false;
     
     // Variables of canvas
     public Canvas displayTutorial;
@@ -21,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     public Canvas displayInGame;
     public TextMeshProUGUI textInGame;
+    
+    public Canvas displayEnd;
+    public TextMeshProUGUI textEnd;
     
     // Indicator of interaction
     public TextMeshProUGUI interactionIndicator;
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         // Reset game status
         isGameBegined = false;
+        isGameEnded = false;
         
         // Set-up canvas
         displayTutorial = GameObject.Find("DisplayTutorial").GetComponent<Canvas>();
@@ -62,6 +68,12 @@ public class GameManager : MonoBehaviour
 
         textInGame.text = "";
         interactionIndicator.text = "";
+        
+        // Set-up EndGame displaying
+        displayEnd = GameObject.Find("DisplayEnd").GetComponent<Canvas>();
+        textEnd = GameObject.Find("TextEnd").GetComponent<TextMeshProUGUI>();
+
+        textEnd.text = "";
         
         // Set-up dialogue runner
         dialogueRunner = GameObject.Find("Dialogue System").GetComponent<DialogueRunner>();
@@ -92,6 +104,32 @@ public class GameManager : MonoBehaviour
             textInGame.text = "WASD: MOVE" + "  |  " +
                               "F: INTERACT" + "  |  " +
                               "C: Open Contact";
+        }
+        
+        // If the player reached the Raccoon,
+        // end the game and show the end stage
+        if (isGameEnded)
+        {
+            Destroy(LevelLoader.instanse.level);
+            
+            // Show the end UI
+            displayEnd.enabled = true;
+            textEnd.text = "Thank you for playing!" + "\n" +
+                           "Hope you like this game!!" + "\n" +
+                           "... and enjoy your apple pie <3";
+
+            textInGame.text = "Q: Quit The Game";
+
+            // Q to quit the game
+            if (Input.GetKey(KeyCode.Q))
+            {
+                Application.Quit();
+                Debug.Log("Game Quited");
+            }
+        }
+        else
+        {
+            displayEnd.enabled = false;
         }
     }
 }
