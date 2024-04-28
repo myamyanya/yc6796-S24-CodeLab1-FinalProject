@@ -6,15 +6,11 @@ using UnityEngine;
 public class NPCLogic : MonoBehaviour
 {
     // Variables
-    [SerializeField] private bool isColliding = false;
     public NPCScriptableObject npcData;
 
     [SerializeField] private string npcName;
     [SerializeField] private Sprite npcSprite;
     [SerializeField] private string dialogues;
-    
-    // Preventing re-triggering the behave
-    [SerializeField] private bool isInteracted = false;
     
     // Start is called before the first frame update
     void Start()
@@ -40,38 +36,10 @@ public class NPCLogic : MonoBehaviour
         // If the player is trying to interact, do something
         NPCBehave();
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("Player is near by...");
-
-            isColliding = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("Player is leaving.");
-
-            isColliding = false;
-        }
-    }
     
     // NPC Behave
     public virtual void NPCBehave()
     {
-        if (isColliding)
-        {
-            if (Input.GetKey(KeyCode.E) && !isInteracted)
-            {
-                Debug.Log("Interacting with the player.");
-                
-                isInteracted = true;
-            }
-        }
+        // NPC behave will be further defined by the subclasses
     }
 }

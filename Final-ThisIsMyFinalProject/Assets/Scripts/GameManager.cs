@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // Variables 
     public static GameManager instance;
     
-    [SerializeField] private bool isGameBegined = false;
+    public bool isGameBegined = false;
     
     // Variables of canvas
     public Canvas displayTutorial;
@@ -76,8 +76,9 @@ public class GameManager : MonoBehaviour
             displayTutorial.enabled = false;
             
             // Display the In-game canvas and text
-            textInGame.text = "WASD: MOVE" + "  ||  " +
-                              "F: INTERACT";
+            textInGame.text = "WASD: MOVE" + "  |  " +
+                              "F: INTERACT" + "  |  " +
+                              "C: Open Contact";
         }
     }
 }
