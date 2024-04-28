@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public Canvas displayInGame;
     public TextMeshProUGUI textInGame;
     
+    // Indicator of interaction
+    public TextMeshProUGUI interactionIndicator;
+    
     // Making the GameManager into a singleton
     private void Awake()
     {
@@ -51,7 +54,10 @@ public class GameManager : MonoBehaviour
         displayInGame = GameObject.Find("DisplayGame").GetComponent<Canvas>();
         textInGame = GameObject.Find("TextInGame").GetComponent<TextMeshProUGUI>();
 
+        interactionIndicator = GameObject.Find("TextInGame_Indicator").GetComponent<TextMeshProUGUI>();
+
         textInGame.text = "";
+        interactionIndicator.text = "";
     }
 
     // Update is called once per frame

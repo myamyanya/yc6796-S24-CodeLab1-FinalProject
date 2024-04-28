@@ -132,6 +132,9 @@ public class LevelLoader : MonoBehaviour
                     case 'P': // Player
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
                         break;
+                    case 'R': // End: Raccoon
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/raccoon"));
+                        break;
                     case 'Y': // Yellow Flowers
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/YellowFlowers"));
                         break;

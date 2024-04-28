@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCLogicFriendly : NPCLogic
+public class NPCLogicRaccoon : NPCLogic
 {
     // Variables
     // Checking if the player is colliding with the NPC
@@ -35,20 +35,12 @@ public class NPCLogicFriendly : NPCLogic
     {
         if (isColliding)
         {
-            GameManager.instance.interactionIndicator.text = "F: Say \"Hi\" ?";
-            
             if (Input.GetKey(KeyCode.E) && !isInteracted)
             {
                 Debug.Log("Interacting with the player.");
+
                 isInteracted = true;
-                
-                // Add the info of this NPC into the friend contact sheet
-                ContactsManager.instance.contacts.Enqueue(npcData);
             }
-        }
-        else
-        {
-            GameManager.instance.interactionIndicator.text = "";
         }
     }
 }
