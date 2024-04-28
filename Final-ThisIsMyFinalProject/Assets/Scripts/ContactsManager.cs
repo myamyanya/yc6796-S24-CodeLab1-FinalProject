@@ -13,8 +13,6 @@ public class ContactsManager : MonoBehaviour
     // Display
     [SerializeField] private Canvas displayContacts;
     [SerializeField] private TextMeshProUGUI friendName;
-    /*[SerializeField] private Image friendImage;
-    [SerializeField] private TextMeshProUGUI friendDescription;*/
 
     [SerializeField] private bool contactIsOpened = false;
         
@@ -35,14 +33,12 @@ public class ContactsManager : MonoBehaviour
         // Set up display
         displayContacts = GameObject.Find("DisplayContacts").GetComponent<Canvas>();
         friendName = GameObject.Find("NPCName").GetComponent<TextMeshProUGUI>();
-        /*friendImage = GameObject.Find("NPCImage").GetComponent<Image>();
-        friendDescription = GameObject.Find("NPCDescription").GetComponent<TextMeshProUGUI>();*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        // ON/OFF
+        // ON/OFF switch
         if (GameManager.instance.isGameBegined)
         {
             if (Input.GetKeyDown(KeyCode.C))
@@ -60,10 +56,18 @@ public class ContactsManager : MonoBehaviour
 
         displayContacts.enabled = contactIsOpened;
 
-        // Content
-        if (contacts.Count > 0)
+        // Pulling content from the queue and put them into the display
+        if (contacts != null && contacts.Count > 0)
         {
-            friendName.text += contacts.Dequeue() + "\n";
+            string content = "";
+            
+            foreach (NPCScriptableObject npc in contacts)
+            {
+                content += npc.npcName + "\n";
+            }
+            
+            friendName.text = content;
+            friendName.color = Color.black;
         }
         else
         {

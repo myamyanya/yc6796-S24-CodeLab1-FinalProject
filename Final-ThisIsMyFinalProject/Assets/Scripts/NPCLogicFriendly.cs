@@ -40,7 +40,7 @@ public class NPCLogicFriendly : NPCLogic
                 Debug.Log("Interacting with the player.");
                 isInteracted = true;
                 
-                // Add the info of this NPC into the contacts
+                // Add the info of this NPC into the friend contact sheet
                 ContactsManager.instance.contacts.Enqueue(npcData);
                 
             }

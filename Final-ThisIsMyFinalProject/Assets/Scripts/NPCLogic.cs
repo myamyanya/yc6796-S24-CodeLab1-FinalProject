@@ -20,7 +20,8 @@ public class NPCLogic : MonoBehaviour
         npcSprite = npcData.NpcSprite;
         
         // Implementing the data to the NPC
-        gameObject.name = npcName;
+        gameObject.name = npcName + "Sprite";
+        gameObject.transform.parent.name = npcName;
         gameObject.GetComponent<SpriteRenderer>().sprite = npcSprite;
         
         // Setting up dialogues
