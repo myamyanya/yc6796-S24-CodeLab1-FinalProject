@@ -9,7 +9,7 @@ using File = System.IO.File;
 public class LevelLoader : MonoBehaviour
 {
     // For LevelLoader
-    private const string FILE_DIR = "/Levels/";
+    private const string FILE_DIR = "/Resources/Levels/";
     private const string FILE = "Levels.txt";
     private string FILE_PATH;
     
