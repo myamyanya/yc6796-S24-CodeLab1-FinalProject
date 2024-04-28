@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f9f29e5ba224c479e96238b6774d95, type: 3}
   m_Name: Hedgehog
   m_EditorClassIdentifier: 
-  npcName: Hedgehog
+  npcName: Hedgehugger
   NpcSprite: {fileID: 21300000, guid: 1987d8cbed944d24eb7c3b00cdb95112, type: 3}
   npcType: 1
-  dialogueNode: 
+  dialogueNode: Hedgehog
+  contactCode: 497*

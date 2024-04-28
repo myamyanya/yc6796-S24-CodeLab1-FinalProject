@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Windows;
+using Yarn.Unity;
 using Input = UnityEngine.Input;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,9 @@ public class GameManager : MonoBehaviour
     
     // Indicator of interaction
     public TextMeshProUGUI interactionIndicator;
+    
+    // DialogueRunner
+    public DialogueRunner dialogueRunner;
     
     // Making the GameManager into a singleton
     private void Awake()
@@ -58,6 +62,9 @@ public class GameManager : MonoBehaviour
 
         textInGame.text = "";
         interactionIndicator.text = "";
+        
+        // Set-up dialogue runner
+        dialogueRunner = GameObject.Find("Dialogue System").GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame

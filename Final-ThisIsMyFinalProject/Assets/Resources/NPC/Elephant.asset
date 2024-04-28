@@ -15,4 +15,5 @@ MonoBehaviour:
   npcName: Elephant
   NpcSprite: {fileID: 21300000, guid: d6cefca9454df014db02f4f19585ac3a, type: 3}
   npcType: 1
-  dialogueNode: 
+  dialogueNode: Elephant
+  contactCode: '@006'

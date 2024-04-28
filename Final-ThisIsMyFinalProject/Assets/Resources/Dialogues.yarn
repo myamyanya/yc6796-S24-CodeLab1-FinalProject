@@ -3,13 +3,70 @@ tags:
 ---
 Game: Test!
 Game: Test test!!
--> Op1
-    Yeee
--> OP2
-    Yaaahh
 ===
 
+// LV1
 title: Zebra
 ---
 Zebra: Hayy!!
+Zebra: I'm Stripey, the zebra! Nice to meet you!
+Stripey: Oh... well, I'd love to chat more... 
+Stripey: ... but you seem to have somewhere to be.
+Stripey: Here's my contact info, let's catch up later!
+===
+
+// LV2
+title: Flamingo
+---
+Flamingo: ... ZZZ  *Looks like she's having a sweet dream*
+===
+
+title: Hedgehog
+---
+Hedgehog: Greetings!
+Hedgehog: I'm on my way to gather food.
+Hedgehog: But... if you'd like, here's my contact info.
+===
+
+// LV3
+title: Giraffe
+---
+Giraffe: Wow, hello there!
+Giraffe: This is my elephant friend, Mr. McTrumpet.
+Giraffe: I can give you his contact information if you'd like!  *wink*
+===
+
+title: Elephant
+---
+Elephant: Hi, hello!
+Elephant: This is my friend, Giraffic!
+Elephant: Here, let me write down his contact info!
+===
+
+// LV4
+title: Cheetah
+---
+Cheetah: *He's so focused on sniffing those fresh flowers that he didn't notice you*
+===
+
+// LV5
+title: Cow
+---
+Cow: Oh, um... are you talking to me?
+Cow: Sorry, I was just really focused on smelling that apple pie... 
+Cow: and the cinnamon...
+Cow: Are you having some tea? Maybe I can join you?
+Cow: ...I'm Moody, glad to talk to you.
+===
+
+title: Raccoon
+---
+<<declare $isGameEnd = false>>
+
+Trashpanda: Hey buddy! You made it!
+Trashpanda: Hope your journey was smooth, and...
+Trashpanda: Ta-da! Behold, the universe's unbeatable homemade apple pie!
+Trashpanda: Enjoy!!
+
+<<set $isGameEnd = true>>
 ===

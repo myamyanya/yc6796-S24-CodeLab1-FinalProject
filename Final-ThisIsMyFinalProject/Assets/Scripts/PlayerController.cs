@@ -36,17 +36,28 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // WASD controller to move
-        Moving();
+        if (!GameManager.instance.dialogueRunner.IsDialogueRunning)
+        {
+            Moving();
+        }
 
         // Press F to load next level
         if (isReadyForNextLevel)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            // Show indicator
+            GameManager.instance.interactionIndicator.text = "F: Go to next level!";
+            
+            if (Input.GetKey(KeyCode.F))
             {
                 Debug.Log("Next-level Loaded");
 
                 LevelLoader.instanse.CurrentLevel++;
             }
+        }
+        else
+        {
+            // Hide indicator
+            GameManager.instance.interactionIndicator.text = "";
         }
     }
 

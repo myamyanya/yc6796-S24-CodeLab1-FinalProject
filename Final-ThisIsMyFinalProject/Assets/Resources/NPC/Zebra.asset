@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f9f29e5ba224c479e96238b6774d95, type: 3}
   m_Name: Zebra
   m_EditorClassIdentifier: 
-  npcName: Zebra
+  npcName: Stripey
   NpcSprite: {fileID: 21300000, guid: 0a3a9ca9ec0fae342b1818f847c94e82, type: 3}
   npcType: 1
+  dialogueNode: Zebra
+  contactCode: 1#1#

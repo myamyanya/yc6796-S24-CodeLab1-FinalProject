@@ -42,6 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8832249008933171443}
+  - component: {fileID: 8521958061416957158}
   - component: {fileID: 4431067942573366464}
   - component: {fileID: 5607769752428768193}
   - component: {fileID: 2595576134944279586}
@@ -67,7 +68,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 676664291518199984}
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
---- !u!114 &4431067942573366464
+--- !u!114 &8521958061416957158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,6 +77,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 7917115475762378870}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df35396ac98495a48a9933faa10810f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcData: {fileID: 11400000, guid: 643f40945710ade4b87d934a7ca6327d, type: 2}
+  npcName: 
+  npcSprite: {fileID: 0}
+  dialogues: 
+  dialogueRunner: {fileID: 0}
+  isColliding: 0
+  isInteracted: 0
+--- !u!114 &4431067942573366464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917115475762378870}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23760a4c01dc7a347b5f46b2e8efa541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -83,6 +103,7 @@ MonoBehaviour:
   npcName: 
   npcSprite: {fileID: 0}
   dialogues: 
+  dialogueRunner: {fileID: 0}
   isColliding: 0
   isInteracted: 0
 --- !u!212 &5607769752428768193
@@ -156,7 +177,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 2, z: 0.75}
+  m_Size: {x: 4, y: 3, z: 2}
   m_Center: {x: 0, y: 1, z: 0.000000059604645}
 --- !u!1 &9060030601711526337
 GameObject:

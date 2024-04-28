@@ -126,6 +126,9 @@ public class LevelLoader : MonoBehaviour
                     case 'G': // Grass
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Grass"));
                         break;
+                    case 'M': // Flamingo
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/flamingo"));
+                        break;
                     case 'N': // Next Level trigger
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/NextLevel"));
                         break;

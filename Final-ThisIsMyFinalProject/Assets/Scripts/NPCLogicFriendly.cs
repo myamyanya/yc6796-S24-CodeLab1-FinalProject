@@ -35,12 +35,25 @@ public class NPCLogicFriendly : NPCLogic
     {
         if (isColliding)
         {
-            GameManager.instance.interactionIndicator.text = "F: Say \"Hi\" ?";
+            if (!isInteracted)
+            {
+                // Show the indicator
+                GameManager.instance.interactionIndicator.text = "F: Say \"Hi\" ?";
+            }
             
-            if (Input.GetKey(KeyCode.E) && !isInteracted)
+            if (Input.GetKey(KeyCode.F) && !isInteracted)
             {
                 Debug.Log("Interacting with the player.");
                 isInteracted = true;
+                
+                // Hide the indicator
+                GameManager.instance.interactionIndicator.text = "";
+
+                // Start running the dialogues
+                if (dialogues != null && !dialogueRunner.IsDialogueRunning)
+                {
+                    dialogueRunner.StartDialogue(dialogues);
+                }
                 
                 // Add the info of this NPC into the friend contact sheet
                 ContactsManager.instance.contacts.Enqueue(npcData);

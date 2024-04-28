@@ -35,12 +35,17 @@ public class NPCLogicNeutral : NPCLogic
     {
         if (isColliding)
         {
-            if (Input.GetKey(KeyCode.E) && !isInteracted)
+            if (!isInteracted && 
+                !dialogueRunner.IsDialogueRunning &&
+                dialogues != null)
             {
-                Debug.Log("Interacting with the player.");
-
-                isInteracted = true;
+                dialogueRunner.StartDialogue(dialogues);
             }
+            isInteracted = true;
+        }
+        else
+        {
+            dialogueRunner.Stop();
         }
     }
 }

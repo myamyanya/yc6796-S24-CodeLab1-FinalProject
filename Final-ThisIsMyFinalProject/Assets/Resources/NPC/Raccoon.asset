@@ -15,4 +15,5 @@ MonoBehaviour:
   npcName: Raccoon
   NpcSprite: {fileID: 21300000, guid: e4b13257b05921140809c08e172d9d02, type: 3}
   npcType: 1
-  dialogueNode: 
+  dialogueNode: Trashpanda
+  contactCode: 3972

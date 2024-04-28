@@ -15,4 +15,4 @@ MonoBehaviour:
   npcName: Flamingo
   NpcSprite: {fileID: 21300000, guid: 656868e72d9ba5b4e99c2710f851b615, type: 3}
   npcType: 0
-  dialogueNode: 
+  dialogueNode: Flamingo

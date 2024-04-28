@@ -15,4 +15,4 @@ MonoBehaviour:
   npcName: Cheetah
   NpcSprite: {fileID: 21300000, guid: 56fd6798d65b8414182ae8b301bc455a, type: 3}
   npcType: 0
-  dialogueNode: 
+  dialogueNode: Cheetah

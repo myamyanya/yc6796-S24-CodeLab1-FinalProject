@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f9f29e5ba224c479e96238b6774d95, type: 3}
   m_Name: Cow
   m_EditorClassIdentifier: 
-  npcName: Cow
+  npcName: Moody
   NpcSprite: {fileID: 21300000, guid: 699d6e4553dd13341b67753252ae2c05, type: 3}
   npcType: 1
-  dialogueNode: 
+  dialogueNode: Cow
+  contactCode: 

@@ -63,7 +63,7 @@ public class ContactsManager : MonoBehaviour
             
             foreach (NPCScriptableObject npc in contacts)
             {
-                content += npc.npcName + "\n";
+                content += npc.npcName + ": " + npc.contactCode + "\n";
             }
             
             friendName.text = content;
