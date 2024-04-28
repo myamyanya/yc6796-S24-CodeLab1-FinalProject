@@ -40,12 +40,16 @@ public class PlayerController : MonoBehaviour
         {
             Moving();
         }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
 
         // Press F to load next level
         if (isReadyForNextLevel)
         {
-            // Show indicator
-            GameManager.instance.interactionIndicator.text = "F: Go to next level!";
+            /*// Show indicator
+            GameManager.instance.interactionIndicator.text = "F: Go to next level!";*/
             
             if (Input.GetKey(KeyCode.F))
             {
@@ -54,11 +58,11 @@ public class PlayerController : MonoBehaviour
                 LevelLoader.instanse.CurrentLevel++;
             }
         }
-        else
+        /*else
         {
             // Hide indicator
             GameManager.instance.interactionIndicator.text = "";
-        }
+        }*/
     }
 
     private void Moving()

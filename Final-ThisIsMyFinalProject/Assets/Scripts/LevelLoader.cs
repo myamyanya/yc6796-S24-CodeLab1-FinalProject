@@ -120,11 +120,29 @@ public class LevelLoader : MonoBehaviour
                     case '-': // Empty space
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Tile"));
                         break;
+                    case 'A': // Apple Pie
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/ApplePie"));
+                        break;
+                    case 'B': // Basket Flower
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Basket-flower"));
+                        break;
+                    case 'C': // Cheetah
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/cheetah"));
+                        break;
+                    case 'E': // Elephant
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/elephant"));
+                        break;
                     case 'F': // Flowers
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Flowers"));
                         break;
                     case 'G': // Grass
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Grass"));
+                        break;
+                    case 'H': // Hedgehog
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/hedgehog"));
+                        break;
+                    case 'I': // Giraffe
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/giraffe"));
                         break;
                     case 'M': // Flamingo
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/flamingo"));
@@ -132,11 +150,20 @@ public class LevelLoader : MonoBehaviour
                     case 'N': // Next Level trigger
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/NextLevel"));
                         break;
+                    case 'O': // Plant-pot
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Plant-pot"));
+                        break;
                     case 'P': // Player
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
                         break;
                     case 'R': // End: Raccoon
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/raccoon"));
+                        break;
+                    case 'U': // Water-can Flower
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/WaterCan-flower"));
+                        break;
+                    case 'W': // Cow
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/cow"));
                         break;
                     case 'Y': // Yellow Flowers
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/YellowFlowers"));

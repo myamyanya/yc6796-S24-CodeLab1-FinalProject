@@ -16,4 +16,4 @@ MonoBehaviour:
   NpcSprite: {fileID: 21300000, guid: 699d6e4553dd13341b67753252ae2c05, type: 3}
   npcType: 1
   dialogueNode: Cow
-  contactCode: 
+  contactCode: moo!
