@@ -28,6 +28,9 @@ public class NPCLogicFriendly : NPCLogic
             //Debug.Log("Player is leaving.");
 
             isColliding = false;
+            
+            // Hide indicator
+            GameManager.instance.interactionIndicator.text = "";
         }
     }
     
@@ -58,10 +61,6 @@ public class NPCLogicFriendly : NPCLogic
                 // Add the info of this NPC into the friend contact sheet
                 ContactsManager.instance.contacts.Enqueue(npcData);
             }
-        }
-        else
-        {
-            GameManager.instance.interactionIndicator.text = "";
         }
     }
 }

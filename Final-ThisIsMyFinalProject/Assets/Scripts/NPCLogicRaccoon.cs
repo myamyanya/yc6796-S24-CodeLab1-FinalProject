@@ -35,6 +35,9 @@ public class NPCLogicRaccoon : NPCLogic
             //Debug.Log("Player is leaving.");
 
             isColliding = false;
+            
+            // Hide indicator
+            GameManager.instance.interactionIndicator.text = "";
         }
     }
     
@@ -73,10 +76,6 @@ public class NPCLogicRaccoon : NPCLogic
             {
                 GameManager.instance.isGameEnded = true;
             }
-        }
-        else
-        {
-            GameManager.instance.interactionIndicator.text = "";
         }
     }
 }
